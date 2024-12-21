@@ -1,0 +1,41 @@
+ACL 2005 Workshop on Building and
+Using Parallel Texts: Data Driven
+Machine Translation and Beyond
+
+Shared Task on Word Alignment
+http://www.cs.unt.edu/~rada/wpt05
+
+
+TEST DATA FOR THE ENGLISH-HINDI WORD ALIGNMENT TASK
+
+
+Data
+----
+The test set for English-Hindi task consists of 90 sentences. See the
+"Guidelines" for details regarding the annotation scheme.
+
+File Naming Conventions
+-----------------------
+There is one pair of files containing the sentence aligned test texts, 
+with the Hindi texts carrying the .h extension, and the English texts 
+carrying the .e extension. 
+
+Source and target language
+-------------------------
+For this task, English is the source language, and Hindi is the target
+language. Therefore, in a word alignment line:
+sentence_no position_L1 position_L2 [S|P] [confidence]
+
+position_L1 represents the position of the word within the English sentence, 
+position_L2 represents the position of the word within the Hindi sentence,
+
+[the first word in a sentence is at position 1]
+
+Other
+-----
+1. An alignment has to be provided for each word in the test files. If a word
+does not appear in any alignment, we assume by default a NULL alignment for 
+that word.
+
+
+
