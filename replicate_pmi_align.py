@@ -21,12 +21,8 @@ results = []
 gold_aligen_list = []
 
 with tqdm(total=num_samples, desc='Processing') as pbar:
-# if True:
-#     test_line_id = 508
     for test_line_id in range(num_samples):
-        # gold_alignment = open('data/deen/alignmentDeEn.talp', 'r').readlines()[test_line_id]
-        # src_text = open('data/deen/de', 'r', encoding='latin-1').readlines()[test_line_id].strip()
-        # tgt_text = open('data/deen/en', 'r', encoding='latin-1').readlines()[test_line_id].strip()
+        
         
         gold_alignment = open(f'PMI-Align/data/{src}-{tgt}/gold.{src}-{tgt}.aligned', 'r').readlines()[test_line_id]
         src_text = open(f'PMI-Align/data/{src}-{tgt}/text.{src}', 'r').readlines()[test_line_id].strip()

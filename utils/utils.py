@@ -687,7 +687,7 @@ def load_raw_hall(data_dir, only_ds_name=False):
     # ds_dict = {"hall_deen": _load_hall_deen(data_dir)}
 
     ds_dict = _load_halomi(data_dir)
-    ds_dict["hall_deen"] = _load_hall_deen(data_dir)
+
     if only_ds_name:
         return list(ds_dict.keys())
 
@@ -772,7 +772,7 @@ def _load_hall_deen(data_dir):
 
 def _load_halomi(data_dir):
     df = pd.read_csv(
-        os.path.join(data_dir, "halomi_release_v2/data", "halomi_core.tsv"),
+        os.path.join("halomi_release_v2/data", "halomi_core.tsv"),
         sep="\t",
         keep_default_na=False,
     )

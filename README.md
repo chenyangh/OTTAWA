@@ -4,10 +4,10 @@ This repo includes the code for the paper "OTTAWA: Optimal Transport Adaptive Wo
 
 ```bash
 TMP_FILE_PATH="" # The path to the temporary file, including embeddings 
-python aligner.py --project_dir $TMP_FILE_PATH  --mode dump_emb # Prepare the embeddings
+python aligner.py  --mode dump_emb # Prepare the embeddings
 
 $TASK="hall"  # hall or omi
-python aligner.py --project_dir $TMP_FILE_PATH  --mode run_hall  --error_type $TASK
+python aligner.py  --mode run_hall  --error_type $TASK
 ```
 
 ## Code structure

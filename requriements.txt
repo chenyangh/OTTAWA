@@ -1,0 +1,5 @@
+POT
+wordfreq
+spacy
+camel-tools
+sentence_transformers

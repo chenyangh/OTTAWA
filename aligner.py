@@ -36,6 +36,9 @@ avg_emb_list = None #  pkl.load(open("labase_avg_emb_list.pkl", "rb"))
 
 # all_results = []
 
+
+LaBSE_model = 'sentence-transformers/LaBSE'
+
 class Aligner():
 
     def __init__(self, args, ds_name, src_lang, tgt_lang):
@@ -46,7 +49,7 @@ class Aligner():
         self.tgt_lang = tgt_lang
         self.model_name = args.model_name
         self.model_path = os.path.join(args.model_dir, self.model_name)
-        self.tokenizer: AutoTokenizer = AutoTokenizer.from_pretrained(self.model_path, use_fast=True)
+        self.tokenizer: AutoTokenizer = AutoTokenizer.from_pretrained(LaBSE_model, use_fast=True)
 
         self.util_data_dict = {}
         self.ds_src, self.ds_tgt = None, None
@@ -731,8 +734,9 @@ def main():
     parser.add_argument(
         "--project_dir",
         type=str,
-        required=True,
+        # required=True,
         help="project_dir",
+        default="cache"
     )
 
     parser.add_argument(
@@ -780,6 +784,7 @@ def main():
     args.model_dir = os.path.join(args.project_dir, "models")
     args.data_dir = os.path.join(args.project_dir, "data")
     args.tmp_dir = os.path.join(args.project_dir, "tmp")
+    os.makedirs(args.tmp_dir, exist_ok=True)
 
     if args.mode == "dump_emb":
         dump_emb(args)
